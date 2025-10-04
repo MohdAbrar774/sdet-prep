@@ -42,12 +42,23 @@ class MyThread extends Thread {
     public void run() {
         System.out.println("My thread is running");
     }
+
+    
+}
+class MyThread2 extends Thread {
+    public void run() {
+        System.out.println("My thread is running");
+    }
+
+    
 }
 
 public class Demo {
     public static void main(String[] args) {
         MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread2();
         t1.start(); // starts a new thread
+        t2.start(); // starts a new thread
     }
 }
 ```
