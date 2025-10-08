@@ -1,6 +1,7 @@
 package demo02;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,7 @@ public class LocatorDemo {
 	
 	
 	//name
-	driver.findElement(By.name("q")).sendKeys("Mac"); //enter Mac in search box
+	//driver.findElement(By.name("q")).sendKeys("Mac"); //enter Mac in search box
 	
 	
 	//id
@@ -31,32 +32,14 @@ public class LocatorDemo {
 	//System.out.print(isDisplay);
  
 	//linkText
-    driver.findElement(By.className("_2iLD__")).click();   // click search button 
-    driver.findElement(By.className("DByuf4")).click();    //click on first mac product displayed
-    
-	//driver.findElement(By.linkText("Login")).click();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    
-	WebElement pincod = driver.findElement(By.id("pincodeInputId"));
-	pincod.sendKeys("440012");
-	
-	driver.findElement(By.className("i40dM4")).click();
-	// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	
-	  WebElement resultMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nyRpc8")));
+   // driver.findElement(By.className("_2iLD__")).click();   // click search button 
+   // driver.findElement(By.className("DByuf4")).click();    //click on first mac product displayed	
 
-      // 6️⃣ Fetch and print text
-      String message = resultMsg.getText();
-      System.out.println("Availability Status: " + message);
-
-      // 7️⃣ (Optional) Verify text
-      //if (message.toLowerCase().contains("available")) {
-      //    System.out.println("✅ Product is available for this pincode.");
-    //  } else {
-      //    System.out.println("❌ Product not available.");
-   //   }
+  
 	//partialLinkText  
 	//driver.findElement(By.partialLinkText("AppleMacBookAIRAppleM2 - (16 GB/256 GB SSD/macOS Sequoia) MC7X4HN/A")).click();
 	
-	}
+	List<WebElement> hyperLink = driver.findElements(By.className("_1ch8e_"));
+	System.out.print("Here's the No. of hyperLinks on the top:"+hyperLink.size());
+}
 }
